@@ -20,8 +20,6 @@ for (let i = 0; i < collect.length; i++) {
 		if(index === 2){
 			countTow++;
 		}
-		console.log(index);
-		alert(index);
 		let clas = `#content-${index}`;
 		//remove class active
 
@@ -34,9 +32,24 @@ for (let i = 0; i < collect.length; i++) {
 
 
 	});
-	console.log("Count how many times the user opened the 2nd tab : "+ countTow);
-
-
-
-
 }
+console.log("Count how many times the user opened the 2nd tab : "+ countTow);
+
+	window.addEventListener("keydown", event => {
+		let k = event.key;
+		if ( k>0 && k<5) {
+			let tabActv = document.querySelector('.tab.active');
+			let contActv = document.querySelector('.content.active');
+
+			tabActv.classList.remove('active');
+		contActv.classList.remove('active');
+
+			let clas = `#content-${k}`;
+
+			collect[k-1].classList.add('active');
+		    document.querySelector(clas).classList.add('active');
+
+
+		}
+	  });
+	 
