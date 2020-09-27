@@ -49,7 +49,11 @@ for (let i = 0; i < collect.length; i++) {
 			let clas = `#content-${k}`;
 
 			collect[k-1].classList.add('active');
-		    document.querySelector(clas).classList.add('active');
+			document.querySelector(clas).classList.add('active');
+			if(k == 2){
+				countTow++;
+				document.querySelector("h1").querySelector("span").textContent = countTow ;
+			}
 
 
 		}
