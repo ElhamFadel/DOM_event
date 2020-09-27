@@ -19,6 +19,7 @@ for (let i = 0; i < collect.length; i++) {
 		index = i + 1;
 		if(index === 2){
 			countTow++;
+			document.querySelector("h1").querySelector("span").textContent = countTow ;
 		}
 		let clas = `#content-${index}`;
 		//remove class active
@@ -33,7 +34,8 @@ for (let i = 0; i < collect.length; i++) {
 
 	});
 }
-console.log("Count how many times the user opened the 2nd tab : "+ countTow);
+
+
 
 	window.addEventListener("keydown", event => {
 		let k = event.key;
